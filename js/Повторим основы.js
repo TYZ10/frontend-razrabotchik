@@ -1,8 +1,6 @@
 
-function getRandomInt() {
+function getRandomInt(min, max) {
     // Получает рандомное целое число от 1 до 100
-    min = 1
-    max = 100
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
@@ -16,26 +14,27 @@ function PCOne(numberAnswer, numberPC) {
 function PCTwo(numberPC, resultAnswer) {
     // Логика второго компьютера
     if (numberPC == 0) {
-        return getRandomInt();
+        return getRandomInt(1, 100);
     };
 
     let resultNum
 
     if (resultAnswer == -1) {
-        resultNum = Math.floor(numberPC / 2)
+        resultNum = Math.floor(numberPC / getRandomInt(2, 5))
         console.log("Компьютер 1: Меньше.")
     }
     else {
-        resultNum = Math.floor(numberPC + numberPC / 2)
+        resultNum = Math.floor(numberPC + numberPC / getRandomInt(2, 5))
         console.log("Компьютер 1: Больше.")
     };
 
-    if (resultNum == resultAnswer) resultNum = resultNum - 1;
+    if (resultNum == resultAnswer) resultNum -= 1;
+    if (resultNum > 100) resultAnswer == 100;
 
     return resultNum;
 };
 
-let main_num = getRandomInt();
+let main_num = getRandomInt(1, 100);
 
 console.log("Компьютер 1 загадал число: \n" + main_num);
 var answerPCTwo = PCTwo(0)
