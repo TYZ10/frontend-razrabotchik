@@ -2,4 +2,4 @@
 
 Данный репозиторий создан лишь для **обучения**
 
-[Ссылка на репозиторий](https://www.example.com)
+[Ссылка на репозиторий](https://github.com/TYZ10/frontend-razrabotchik.git)
